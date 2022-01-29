@@ -1,0 +1,114 @@
+@import url(https://fonts.google.com/specimen/Montserrat);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(0, 0%, 92%);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: hsl(0, 0%, 100%);
+    padding: 0px;
+}
+
+h1 {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    display: flex;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Button styling. */
+.btn-dark-mode {
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-dark-mode .fas {
+    display: none;
+}
+
+body.dark .btn-dark-mode .fas {
+    display: inline-block;
+}
+
+body.dark .btn-dark-mode .far {
+    display: none;
+}
+
+/* Input styling. */
+.search {
+    font-size: 14px;
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    min-width: 300px;
+}
+
+/* Drop-down styling. */
+.dropdown {
+    background-color: #fff;
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    font-size: 14px;
+    padding: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dropdown ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 55px;
+    width: 100%;
+    padding: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.dropdown.open ul {
+    display: block;
+}
+
+.dropdown ul li {
+    margin: 5px 0;
+}
+
+.dropdown .fa-chevron-down {
+    margin-left: 4px;
+}
+
+/* Country card styling. */
+.country {
+    max-width: 300px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.country-body {
+    padding: 20px;
+}
+
+.country-body h2 {
+    margin: 0;
+}
