@@ -13,6 +13,7 @@ body {
 header {
     background-color: hsl(0, 0%, 100%);
     padding: 0px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 h1 {
@@ -25,6 +26,7 @@ img {
 
 .container {
     display: flex;
+    flex-wrap: wrap;
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
@@ -98,11 +100,13 @@ body.dark .btn-dark-mode .far {
 
 /* Card styling. */
 .card {
-    max-width: 300px;
+    width: 300px;
+    margin: 10px;
     background-color: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     border-radius: 4px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .card-body {
@@ -111,4 +115,8 @@ body.dark .btn-dark-mode .far {
 
 .card-body h2 {
     margin: 0;
+}
+
+.container.countries {
+    justify-content: center;
 }
