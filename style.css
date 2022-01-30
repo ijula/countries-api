@@ -178,6 +178,9 @@ img {
 /* Modal styling. */
 .modal-container {
     background-color: var(--background_color_el);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
