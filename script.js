@@ -1,12 +1,14 @@
 // TODO:
-// Dark mode toggle.
 // Search.
 // Filter.
 // Modal.
 
 get_countries();
+
 const countries_el = document.getElementById('countries');
 const darkmode_btn = document.getElementById('dark-mode');
+const filter_btn = document.getElementById('filter');
+const search_el = document.getElementById('search');
 
 
 async function get_countries()
@@ -42,6 +44,18 @@ function display_countries(countries)
     }
 }
 
+// when clicked, toggle the dark class.
 darkmode_btn.addEventListener('click', () => {
     document.body.classList.toggle('dark');
+});
+
+// when clicked, toggle the filter class.
+filter_btn.addEventListener('click', () => {
+    filter_btn.classList.toggle('open');
+});
+
+search_el.addEventListener('input', (e) => {
+    const search_term = e.target.value;
+
+    console.log(search_term);
 });

@@ -91,22 +91,25 @@ body.dark .btn-dark-mode .far {
 }
 
 .dropdown ul {
+    background-color: inherit;
     display: none;
     list-style: none;
     position: absolute;
-    left: 0;
     top: 55px;
+    left: 0;
     width: 100%;
     padding: 2px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-decoration-break: inherit;
 }
 
 .dropdown.open ul {
     display: block;
+    padding-left: 20px;
 }
 
 .dropdown ul li {
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
 .dropdown .fa-chevron-down {
