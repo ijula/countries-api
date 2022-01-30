@@ -138,7 +138,7 @@ img {
     display: flex;
     flex-wrap: wrap;
     max-width: 1440px;
-    margin: 0 auto;
+    margin: auto;
     padding: 20px;
     align-items: center;
     justify-content: space-between;
@@ -178,7 +178,7 @@ img {
 
 /* Modal styling. */
 .modal {
-    background-color: var(--body);
+    background-color: inherit;
     display: none;
     align-items: center;
     justify-content: center;
