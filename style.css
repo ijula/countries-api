@@ -4,16 +4,45 @@
   box-sizing: border-box;
 }
 
+:root {
+    /* normal (light) colors. */
+    --background_color_el: hsl(0, 0%, 100%);
+    --body_color: hsl(0, 0%, 90%);
+}
+
+/* placeholder text color. */
+::placeholder {
+    color: hsl(0, 0%, 60%);
+}
+
 body {
-    background-color: hsl(0, 0%, 92%);
+    background-color: var(--body_color);
+    color:hsl(200, 15%, 8%);
     font-family: 'Open Sans', sans-serif;
     margin: 0;
 }
 
+body.dark {
+    /* define the dark mode colors. */
+    --body_color: hsl(207, 26%, 17%);
+    --background_color_el: hsl(209, 23%, 22%);
+    /* different bg dark color, to distinguish it better. */
+    background-color: hsl(207, 26%, 17%);
+    color: white; /* text color. */
+}
+
+::placeholder.dark {
+    color: white;
+}
+
 header {
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--background_color_el);
     padding: 0px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+header.dark {
+    background-color: var(--background_color_el);
 }
 
 h1 {
@@ -22,6 +51,7 @@ h1 {
 
 /* Button styling. */
 .btn-dark-mode {
+    background-color: var(--background_color_el);
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -41,6 +71,8 @@ body.dark .btn-dark-mode .far {
 
 /* Input styling. */
 .search {
+    background-color: var(--background_color_el);
+    color: white;
     font-size: 14px;
     padding: 20px;
     border: none;
@@ -51,7 +83,7 @@ body.dark .btn-dark-mode .far {
 
 /* Drop-down styling. */
 .dropdown {
-    background-color: #fff;
+    background-color: var(--background_color_el);
     position: relative;
     display: inline-block;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -104,7 +136,7 @@ img {
     width: 300px;
     height: 400px;
     margin: 10px;
-    background-color: white;
+    background-color: var(--background_color_el);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     border-radius: 4px;
     overflow: hidden;
