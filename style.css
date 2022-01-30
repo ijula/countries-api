@@ -143,6 +143,10 @@ img {
     cursor: pointer;
 }
 
+.card:hover {
+    opacity: .8;
+}
+
 .card-header {
     margin: 0;
 }
