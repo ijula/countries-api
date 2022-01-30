@@ -54,6 +54,10 @@ h1 {
     cursor: pointer;
 }
 
+.btn-dark-mode:hover {
+    opacity: .8;
+}
+
 .btn-dark-mode .fas {
     display: none;
 }
@@ -78,6 +82,10 @@ body.dark .btn-dark-mode .far {
     min-width: 300px;
 }
 
+.search:hover {
+    opacity: .8;
+}
+
 /* Drop-down styling. */
 .dropdown {
     background-color: var(--background_color_el);
@@ -88,6 +96,10 @@ body.dark .btn-dark-mode .far {
     padding: 20px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.dropdown:hover {
+    opacity: .8;
 }
 
 .dropdown ul {
