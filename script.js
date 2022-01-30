@@ -59,6 +59,8 @@ search_el.addEventListener('input', (e) => {
     //console.log(search_term);
     const country_name = document.querySelectorAll('.country-name');
     
+    // use the HTML that we already have in the DOM.
+    // and only apply a style on it, hiding or showing it.
     country_name.forEach((name) => {
         if (name.innerText.toLowerCase().includes(search_term.toLowerCase())) {
             //console.log(name.innerText);
