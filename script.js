@@ -93,8 +93,39 @@ function show_country_details(country)
     modal_body.innerHTML = `
         <h2 class=country-name">${country.name.common}</h2>
         <p>
+            <strong>CCA2:</strong>
+            ${country.cca2}
+        <p>
             <strong>Region:</strong>
             ${country.region}
+        </p>
+        <p>
+            <strong>Area:</strong>
+            ${country.area}
+        </p>
+        <p>
+            <strong>Capital:</strong>
+            ${country.capital}
+        </p>
+        <p>
+            <strong>latlng:</strong>
+            ${country.latlng}
+        </p>
+        <p>
+            <strong>Borders:</strong>
+            ${country.borders}
+        </p>
+        <p>
+            <strong>Time Zones:</strong>
+            ${country.timezones}
+        </p>
+        <p>
+            <strong>Currencies:</strong>
+            ${country.currencies}
+        </p>
+        <p>
+            <strong>Languages:</strong>
+            ${country.languages}
         </p>
     `;
 }
