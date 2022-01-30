@@ -142,6 +142,7 @@ img {
     padding: 20px;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .card {
@@ -178,9 +179,29 @@ img {
 /* Modal styling. */
 .modal-container {
     background-color: var(--background_color_el);
+    display: none;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 100;
+}
+
+.modal-container img {
+    max-width: 300%;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.btn-close {
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
 }

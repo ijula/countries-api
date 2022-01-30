@@ -65,6 +65,11 @@ function display_countries(countries)
                 </p>
             </div>
         `;
+
+        countries_el.addEventListener('click', () =>  {
+
+        });
+
         countries_el.appendChild(country_el);
     }
 }
