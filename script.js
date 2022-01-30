@@ -30,12 +30,11 @@ function display_countries(countries)
             </div>
             <div class="card-body">
                 <h2>${countries[i].name.common}</h2>
-                <p><strong>Population: </strong>${countries[i].population}</p>
-                <p><strong>Region: </strong>${countries[i].region}</p>
                 <p><strong>Capital: </strong>${countries[i].capital}</p>
+                <p><strong>Region: </strong>${countries[i].region}</p>
+                <p><strong>Population: </strong>${countries[i].population}</p>
             </div>
         `;
         countries_el.appendChild(country_el);
     }
-    
 }
