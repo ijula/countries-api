@@ -7,8 +7,9 @@ get_countries();
 
 const countries_el = document.getElementById('countries');
 const darkmode_btn = document.getElementById('dark-mode');
-const filter_btn = document.getElementById('filter');
 const search_el = document.getElementById('search');
+const filter_btn = document.getElementById('filter');
+const filter_region = filter_btn.querySelectorAll('li');
 
 
 async function get_countries()
@@ -62,19 +63,21 @@ filter_btn.addEventListener('click', () => {
     filter_btn.classList.toggle('open');
 });
 
-// apply a style based on the search value.
+// search by country name.
+// apply a style based on the search value from the search input.
 search_el.addEventListener('input', (e) => {
     const search_term = e.target.value;
     //console.log(search_term);
 
-    // the serach applies to the .country-name class.
-    const country_name = document.querySelectorAll('.country-name');
+    // the search applies to multiple classes.
+    const query_list = document.querySelectorAll('.country-name, .country-capital');
     
     // use the HTML that we already have in the DOM.
     // and only apply a style on it, hiding or showing it.
-    country_name.forEach((name) => {
+    query_list.forEach((name) => {
+        console.log(name.innerText);
+
         if (name.innerText.toLowerCase().includes(search_term.toLowerCase())) {
-            //console.log(name.innerText);
             name.parentElement.parentElement.style.display = 'block';
         } else {
             // do not show it.
@@ -84,3 +87,5 @@ search_el.addEventListener('input', (e) => {
 });
 
 
+
+//console.log(filter_region);
