@@ -10,6 +10,8 @@ const darkmode_btn = document.getElementById('dark-mode');
 const search_el = document.getElementById('search');
 const filter_btn = document.getElementById('filter');
 const filter_region = filter_btn.querySelectorAll('li');
+const modal = document.getElementById('modal');
+const close_btn = document.getElementById('close');
 
 // sort an array by name.common key.
 function sort_by_key(array)
@@ -67,7 +69,7 @@ function display_countries(countries)
         `;
 
         countries_el.addEventListener('click', () =>  {
-
+            modal.style.display = 'flex';
         });
 
         countries_el.appendChild(country_el);
@@ -82,6 +84,11 @@ darkmode_btn.addEventListener('click', () => {
 // when clicked, toggle the filter class.
 filter_btn.addEventListener('click', () => {
     filter_btn.classList.toggle('open');
+});
+
+// close the modal.
+close_btn.addEventListener('click', () => {
+    modal.style.display = 'none';
 });
 
 // search by country name, code or capital.

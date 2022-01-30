@@ -177,7 +177,7 @@ img {
 }
 
 /* Modal styling. */
-.modal-container {
+.modal {
     background-color: var(--background_color_el);
     display: none;
     align-items: center;
@@ -190,7 +190,7 @@ img {
     z-index: 100;
 }
 
-.modal-container img {
+.modal img {
     max-width: 300%;
 }
 
@@ -204,4 +204,9 @@ img {
     top: 20px;
     right: 20px;
     font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-close:hover {
+    filter: brightness(110%);
 }
