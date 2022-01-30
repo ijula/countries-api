@@ -206,3 +206,7 @@ img {
     font-size: 20px;
     cursor: pointer;
 }
+
+.btn-close:hover {
+    filter: brightness(110%);
+}
