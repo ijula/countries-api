@@ -54,6 +54,10 @@ h1 {
     cursor: pointer;
 }
 
+.btn-dark-mode:hover {
+    filter: brightness(110%);
+}
+
 .btn-dark-mode .fas {
     display: none;
 }
@@ -78,6 +82,10 @@ body.dark .btn-dark-mode .far {
     min-width: 300px;
 }
 
+.search:hover {
+    filter: brightness(110%);
+}
+
 /* Drop-down styling. */
 .dropdown {
     background-color: var(--background_color_el);
@@ -88,6 +96,10 @@ body.dark .btn-dark-mode .far {
     padding: 20px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.dropdown:hover {
+    filter: brightness(110%);
 }
 
 .dropdown ul {
@@ -134,7 +146,7 @@ img {
 
 .card {
     width: 300px;
-    height: 450px;
+    height: 400px;
     margin: 10px;
     background-color: var(--background_color_el);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -144,7 +156,7 @@ img {
 }
 
 .card:hover {
-    opacity: .8;
+    filter: brightness(110%);
 }
 
 .card-header {
@@ -161,4 +173,14 @@ img {
 
 .container.countries {
     justify-content: center;
+}
+
+/* Modal styling. */
+.modal-container {
+    background-color: var(--background_color_el);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
