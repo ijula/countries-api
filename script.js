@@ -11,7 +11,7 @@ const search_el = document.getElementById('search');
 const filter_btn = document.getElementById('filter');
 const filter_region = filter_btn.querySelectorAll('li');
 
-
+// sort an array by name.common key.
 function sort_by_key(array)
 {
     return array.sort(function(a, b) {
@@ -27,7 +27,7 @@ async function get_countries()
     const res = await fetch('https://restcountries.com/v3.1/all');
     const countries = await res.json();
 
-    //console.log(countries);
+    //console.log(countries); // unsorted, as they come from the API.
     countries_sorted = sort_by_key(countries);
     console.log(countries_sorted);
 
