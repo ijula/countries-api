@@ -1,4 +1,4 @@
-@import url(https://fonts.google.com/specimen/Montserrat);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 * {
   box-sizing: border-box;
@@ -6,30 +6,18 @@
 
 body {
     background-color: hsl(0, 0%, 92%);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
 }
 
 header {
     background-color: hsl(0, 0%, 100%);
     padding: 0px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 h1 {
     margin: 0;
-}
-
-img {
-    max-width: 100%;
-}
-
-.container {
-    display: flex;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-    align-items: center;
-    justify-content: space-between;
 }
 
 /* Button styling. */
@@ -97,12 +85,34 @@ body.dark .btn-dark-mode .far {
 }
 
 /* Card styling. */
+img {
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .card {
-    max-width: 300px;
+    width: 300px;
+    height: 400px;
+    margin: 10px;
     background-color: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     border-radius: 4px;
     overflow: hidden;
+    cursor: pointer;
+}
+
+.card-header {
+    margin: 0;
 }
 
 .card-body {
@@ -111,4 +121,8 @@ body.dark .btn-dark-mode .far {
 
 .card-body h2 {
     margin: 0;
+}
+
+.container.countries {
+    justify-content: center;
 }
