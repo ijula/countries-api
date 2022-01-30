@@ -82,12 +82,16 @@ function display_countries(countries)
 function show_country_details(country)
 {
     //console.log(typeof country);
+    const modal_body = modal.querySelector('.modal-body');
+    const modal_img = modal.querySelector('img');
 
-    modal.querySelector('.modal-body').innerHTML = `
-        <h2>${country.name.common}</h2>
+    modal_img.src = country.flags.svg;
+
+    modal_body.innerHTML = `
+        <h2 class=country-name">${country.name.common}</h2>
         <p>
-            <strong>Native Name:</strong>
-            ${country.nativeName}
+            <strong>Region:</strong>
+            ${country.region}
         </p>
     `;
 }
