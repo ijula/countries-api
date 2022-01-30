@@ -1,12 +1,12 @@
 // TODO:
-// API Call
 // Dark mode toggle.
-// Search
-// Filter
-// Modal
+// Search.
+// Filter.
+// Modal.
 
 get_countries();
 const countries_el = document.getElementById('countries');
+const darkmode_btn = document.getElementById('dark-mode');
 
 
 async function get_countries()
@@ -41,3 +41,7 @@ function display_countries(countries)
         countries_el.appendChild(country_el);
     }
 }
+
+darkmode_btn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+});
