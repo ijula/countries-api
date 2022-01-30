@@ -31,7 +31,7 @@ async function get_countries()
 
     //console.log(countries); // unsorted, as they come from the API.
     countries_sorted = sort_by_key(countries);
-    console.log(countries_sorted);
+    //console.log(countries_sorted);
 
     display_countries(countries);
 }
@@ -41,39 +41,55 @@ function display_countries(countries)
     // clear the element before displaying the countries.
     countries_el.innerHTML = '';
 
-    for (let i = 0; i < countries.length; i++) {
+    countries.forEach(country => {
         const country_el = document.createElement('div');
         country_el.classList.add('card');
     
         country_el.innerHTML = `
             <div class="card-header">
-                <img src="${countries[i].flags.svg}" alt="Peru">
+                <img src="${country.flags.svg}" alt="Peru">
             </div>
             <div class="card-body">
                 <h2 class="country-name">
-                    ${countries[i].name.common}
+                    ${country.name.common}
                 </h2>
                 <p class="country-codes" style="display: none">
-                    <strong>Codes: </strong>${countries[i].cca2}, ${countries[i].cca3}
+                    <strong>Codes: </strong>${country.cca2}, ${country.cca3}
                 </p>
                 <p class="country-capital">
-                    <strong>Capital: </strong>${countries[i].capital}
+                    <strong>Capital: </strong>${country.capital}
                 </p>
                 <p class="country-region">
-                    <strong>Region: </strong>${countries[i].region}
+                    <strong>Region: </strong>${country.region}
                 </p>
                 <p class="country-population">
-                    <strong>Population: </strong>${countries[i].population}
+                    <strong>Population: </strong>${country.population}
                 </p>
             </div>
         `;
 
+        //console.log(typeof country);
+
         countries_el.addEventListener('click', () =>  {
             modal.style.display = 'flex';
+            show_country_details(country);
         });
 
         countries_el.appendChild(country_el);
-    }
+    });
+}
+
+function show_country_details(country)
+{
+    //console.log(typeof country);
+
+    modal.querySelector('.modal-body').innerHTML = `
+        <h2>${country.name.common}</h2>
+        <p>
+            <strong>Native Name:</strong>
+            ${country.nativeName}
+        </p>
+    `;
 }
 
 // when clicked, toggle the dark class.
