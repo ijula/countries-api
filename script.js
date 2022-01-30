@@ -38,6 +38,9 @@ function display_countries(countries)
                 <h2 class="country-name">
                     ${countries[i].name.common}
                 </h2>
+                <p class="country-codes" style="display: none">
+                    <strong>Codes: </strong>${countries[i].cca2}, ${countries[i].cca3}
+                </p>
                 <p class="country-capital">
                     <strong>Capital: </strong>${countries[i].capital}
                 </p>
@@ -63,29 +66,27 @@ filter_btn.addEventListener('click', () => {
     filter_btn.classList.toggle('open');
 });
 
-// search by country name.
+// search by country name, code or capital.
 // apply a style based on the search value from the search input.
 search_el.addEventListener('input', (e) => {
     const search_term = e.target.value;
     //console.log(search_term);
 
     // the search applies to multiple classes.
-    const query_list = document.querySelectorAll('.country-name, .country-capital');
+    const query_list = document.querySelectorAll('.country-name');
     
     // use the HTML that we already have in the DOM.
     // and only apply a style on it, hiding or showing it.
-    query_list.forEach((name) => {
-        console.log(name.innerText);
-
-        if (name.innerText.toLowerCase().includes(search_term.toLowerCase())) {
-            name.parentElement.parentElement.style.display = 'block';
+    query_list.forEach((i) => {
+        console.log("name.innerText: " + i.innerText);
+        if (i.innerText.toLowerCase().includes(search_term.toLowerCase())) {
+            i.parentElement.parentElement.style.display = 'block';
         } else {
             // do not show it.
-            name.parentElement.parentElement.style.display = 'none';
+            i.parentElement.parentElement.style.display = 'none';
         }
     });
 });
-
 
 
 //console.log(filter_region);
