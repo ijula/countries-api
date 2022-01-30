@@ -34,7 +34,7 @@ function display_countries(countries)
                 <img src="${countries[i].flags.svg}" alt="Peru">
             </div>
             <div class="card-body">
-                <h2>${countries[i].name.common}</h2>
+                <h2 class="country-name">${countries[i].name.common}</h2>
                 <p><strong>Capital: </strong>${countries[i].capital}</p>
                 <p><strong>Region: </strong>${countries[i].region}</p>
                 <p><strong>Population: </strong>${countries[i].population}</p>
@@ -56,6 +56,18 @@ filter_btn.addEventListener('click', () => {
 
 search_el.addEventListener('input', (e) => {
     const search_term = e.target.value;
-
-    console.log(search_term);
+    //console.log(search_term);
+    const country_name = document.querySelectorAll('.country-name');
+    
+    // use the HTML that we already have in the DOM.
+    // and only apply a style on it, hiding or showing it.
+    country_name.forEach((name) => {
+        if (name.innerText.toLowerCase().includes(search_term.toLowerCase())) {
+            //console.log(name.innerText);
+            name.parentElement.parentElement.style.display = 'block';
+        } else {
+            // do not show it.
+            name.parentElement.parentElement.style.display = 'none';
+        }
+    });
 });
