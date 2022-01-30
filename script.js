@@ -34,10 +34,18 @@ function display_countries(countries)
                 <img src="${countries[i].flags.svg}" alt="Peru">
             </div>
             <div class="card-body">
-                <h2 class="country-name">${countries[i].name.common}</h2>
-                <p><strong>Capital: </strong>${countries[i].capital}</p>
-                <p><strong>Region: </strong>${countries[i].region}</p>
-                <p><strong>Population: </strong>${countries[i].population}</p>
+                <h2 class="country-name">
+                    ${countries[i].name.common}
+                </h2>
+                <p class="country-capital">
+                    <strong>Capital: </strong>${countries[i].capital}
+                </p>
+                <p class="country-region">
+                    <strong>Region: </strong>${countries[i].region}
+                </p>
+                <p class="country-population">
+                    <strong>Population: </strong>${countries[i].population}
+                </p>
             </div>
         `;
         countries_el.appendChild(country_el);
@@ -54,9 +62,12 @@ filter_btn.addEventListener('click', () => {
     filter_btn.classList.toggle('open');
 });
 
+// apply a style based on the search value.
 search_el.addEventListener('input', (e) => {
     const search_term = e.target.value;
     //console.log(search_term);
+
+    // the serach applies to the .country-name class.
     const country_name = document.querySelectorAll('.country-name');
     
     // use the HTML that we already have in the DOM.
@@ -71,3 +82,5 @@ search_el.addEventListener('input', (e) => {
         }
     });
 });
+
+
