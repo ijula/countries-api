@@ -11,7 +11,7 @@ const search_el = document.getElementById('search');
 const filter_btn = document.getElementById('filter');
 const filter_region = filter_btn.querySelectorAll('li');
 
-
+// sort an array by name.common key.
 function sort_by_key(array)
 {
     return array.sort(function(a, b) {
@@ -27,7 +27,7 @@ async function get_countries()
     const res = await fetch('https://restcountries.com/v3.1/all');
     const countries = await res.json();
 
-    //console.log(countries);
+    //console.log(countries); // unsorted, as they come from the API.
     countries_sorted = sort_by_key(countries);
     console.log(countries_sorted);
 
@@ -91,7 +91,7 @@ search_el.addEventListener('input', (e) => {
     // use the HTML that we already have in the DOM.
     // and only apply a style on it, hiding or showing it.
     query_list.forEach((i) => {
-        console.log("name.innerText: " + i.innerText);
+        //console.log("innerText: " + i.innerText);
         if (i.innerText.toLowerCase().includes(search_term.toLowerCase())) {
             // .card -> .card-body -> .country-name.
             i.parentElement.parentElement.style.display = 'block';
@@ -105,25 +105,21 @@ search_el.addEventListener('input', (e) => {
 // add a filter on the li inside the .dropdown.
 filter_region.forEach(filter => {
     filter.addEventListener('click', (e) => {
-        //console.log(filter.innerHTML);
+        filter_value = filter.innerHTML;
+        //console.log(filter_value);
 
         const query_list = document.querySelectorAll('.country-region');
-        if (filter.innerHTML === 'All') {
-            query_list.forEach((i) => {
+
+        // use the HTML that we already have in the DOM.
+        // and only apply a style on it, hiding or showing it.
+        query_list.forEach((i) => {
+            console.log("innerText: " + i.innerText);
+            if (i.innerText.includes(filter_value) || filter_value === 'All') {
                 i.parentElement.parentElement.style.display = 'block';
-            });
-        } else {
-            // use the HTML that we already have in the DOM.
-            // and only apply a style on it, hiding or showing it.
-            query_list.forEach((i) => {
-                //console.log("name.innerText: " + i.innerText);
-                if (i.innerText.toLowerCase().includes(filter.innerHTML.toLowerCase())) {
-                    i.parentElement.parentElement.style.display = 'block';
-                } else {
-                    // do not show it.
-                    i.parentElement.parentElement.style.display = 'none';
-                }
-            });
-        }
+            } else {
+                // do not show it.
+                i.parentElement.parentElement.style.display = 'none';
+            }
+        });
     });
 });
