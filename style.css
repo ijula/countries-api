@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+    --background_color_el: hsl(135, 22%, 7%);
+}
+
 body {
     background-color: hsl(0, 0%, 92%);
     font-family: 'Open Sans', sans-serif;
@@ -14,6 +18,10 @@ header {
     background-color: hsl(0, 0%, 100%);
     padding: 0px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+header.dark {
+    background-color: var(--background_color_el);
 }
 
 h1 {
@@ -37,6 +45,10 @@ body.dark .btn-dark-mode .fas {
 
 body.dark .btn-dark-mode .far {
     display: none;
+}
+
+body.dark {
+    background-color: var(--background_color_el);
 }
 
 /* Input styling. */
