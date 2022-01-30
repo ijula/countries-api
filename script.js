@@ -3,7 +3,6 @@
 // Filter.
 // Modal.
 
-get_countries();
 
 const countries_el = document.getElementById('countries');
 const darkmode_btn = document.getElementById('dark-mode');
@@ -12,6 +11,9 @@ const filter_btn = document.getElementById('filter');
 const filter_region = filter_btn.querySelectorAll('li');
 const modal = document.getElementById('modal');
 const close_btn = document.getElementById('close');
+
+get_countries();
+
 
 // sort an array by name.common key.
 function sort_by_key(array)
@@ -30,7 +32,8 @@ async function get_countries()
     const countries = await res.json();
 
     //console.log(countries); // unsorted, as they come from the API.
-    countries_sorted = sort_by_key(countries);
+    //countries_sorted = sort_by_key(countries);
+    sort_by_key(countries);
     //console.log(countries_sorted);
 
     display_countries(countries);
@@ -70,7 +73,7 @@ function display_countries(countries)
 
         //console.log(typeof country);
 
-        countries_el.addEventListener('click', () =>  {
+        country_el.addEventListener('click', () =>  {
             modal.style.display = 'flex';
             show_country_details(country);
         });
