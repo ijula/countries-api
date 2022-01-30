@@ -55,7 +55,7 @@ h1 {
 }
 
 .btn-dark-mode:hover {
-    opacity: .8;
+    filter: brightness(110%);
 }
 
 .btn-dark-mode .fas {
@@ -83,7 +83,7 @@ body.dark .btn-dark-mode .far {
 }
 
 .search:hover {
-    opacity: .8;
+    filter: brightness(110%);
 }
 
 /* Drop-down styling. */
@@ -99,7 +99,7 @@ body.dark .btn-dark-mode .far {
 }
 
 .dropdown:hover {
-    opacity: .8;
+    filter: brightness(110%);
 }
 
 .dropdown ul {
@@ -156,7 +156,7 @@ img {
 }
 
 .card:hover {
-    opacity: .8;
+    filter: brightness(110%);
 }
 
 .card-header {
