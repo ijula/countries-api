@@ -11,8 +11,8 @@
 }
 
 /* placeholder text color. */
-::placeholder {
-    color: hsl(0, 0%, 60%);
+.search::placeholder {
+    color: inherit;
 }
 
 body {
@@ -29,10 +29,6 @@ body.dark {
     /* different bg dark color, to distinguish it better. */
     background-color: hsl(207, 26%, 17%);
     color: white; /* text color. */
-}
-
-::placeholder.dark {
-    color: white;
 }
 
 header {
@@ -52,6 +48,7 @@ h1 {
 /* Button styling. */
 .btn-dark-mode {
     background-color: var(--background_color_el);
+    color: inherit;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -72,7 +69,7 @@ body.dark .btn-dark-mode .far {
 /* Input styling. */
 .search {
     background-color: var(--background_color_el);
-    color: white;
+    color: inherit;
     font-size: 14px;
     padding: 20px;
     border: none;
