@@ -12,12 +12,25 @@ const filter_btn = document.getElementById('filter');
 const filter_region = filter_btn.querySelectorAll('li');
 
 
+function sort_by_key(array)
+{
+    return array.sort(function(a, b) {
+        //console.log(a.name.common);
+        var x = a.name.common;
+        var y = b.name.common;
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
+}
+
 async function get_countries()
 {
     const res = await fetch('https://restcountries.com/v3.1/all');
     const countries = await res.json();
 
-    console.log(countries);
+    //console.log(countries);
+    countries_sorted = sort_by_key(countries);
+    console.log(countries_sorted);
+
     display_countries(countries);
 }
 
@@ -74,12 +87,13 @@ search_el.addEventListener('input', (e) => {
 
     // the search applies to multiple classes.
     const query_list = document.querySelectorAll('.country-name');
-    
+
     // use the HTML that we already have in the DOM.
     // and only apply a style on it, hiding or showing it.
     query_list.forEach((i) => {
         console.log("name.innerText: " + i.innerText);
         if (i.innerText.toLowerCase().includes(search_term.toLowerCase())) {
+            // .card -> .card-body -> .country-name.
             i.parentElement.parentElement.style.display = 'block';
         } else {
             // do not show it.
@@ -88,5 +102,28 @@ search_el.addEventListener('input', (e) => {
     });
 });
 
+// add a filter on the li inside the .dropdown.
+filter_region.forEach(filter => {
+    filter.addEventListener('click', (e) => {
+        //console.log(filter.innerHTML);
 
-//console.log(filter_region);
+        const query_list = document.querySelectorAll('.country-region');
+        if (filter.innerHTML === 'All') {
+            query_list.forEach((i) => {
+                i.parentElement.parentElement.style.display = 'block';
+            });
+        } else {
+            // use the HTML that we already have in the DOM.
+            // and only apply a style on it, hiding or showing it.
+            query_list.forEach((i) => {
+                //console.log("name.innerText: " + i.innerText);
+                if (i.innerText.toLowerCase().includes(filter.innerHTML.toLowerCase())) {
+                    i.parentElement.parentElement.style.display = 'block';
+                } else {
+                    // do not show it.
+                    i.parentElement.parentElement.style.display = 'none';
+                }
+            });
+        }
+    });
+});
