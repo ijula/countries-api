@@ -20,6 +20,9 @@ async function get_countries()
 
 function display_countries(countries)
 {
+    // clear the element before displaying the countries.
+    countries_el.innerHTML = '';
+
     for (let i = 0; i < countries.length; i++) {
         const country_el = document.createElement('div');
         country_el.classList.add('card');
