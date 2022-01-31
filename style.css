@@ -45,7 +45,7 @@ h1 {
     margin: 0;
 }
 
-/* Button styling. */
+/* button styling. */
 .btn-dark-mode {
     background-color: var(--background_color_el);
     color: inherit;
@@ -70,7 +70,7 @@ body.dark .btn-dark-mode .far {
     display: none;
 }
 
-/* Input styling. */
+/* input styling. */
 .search {
     background-color: var(--background_color_el);
     color: inherit;
@@ -86,7 +86,7 @@ body.dark .btn-dark-mode .far {
     filter: brightness(110%);
 }
 
-/* Drop-down styling. */
+/* dropdown styling. */
 .dropdown {
     background-color: var(--background_color_el);
     position: relative;
@@ -128,7 +128,7 @@ body.dark .btn-dark-mode .far {
     margin-left: 4px;
 }
 
-/* Card styling. */
+/* card styling. */
 img {
     max-width: 100%;
     max-height: 200px;
@@ -182,7 +182,7 @@ img {
     justify-content: center;
 }
 
-/* Modal styling. */
+/* modal styling. */
 .modal {
     background-color: inherit;
     display: none;
