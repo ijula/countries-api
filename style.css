@@ -160,6 +160,12 @@ img {
     filter: brightness(110%);
 }
 
+.card img {
+    object-fit: cover;
+    height: 180px;
+    width: 100%;
+}
+
 .card-header {
     margin: 0;
 }
