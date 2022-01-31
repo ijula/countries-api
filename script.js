@@ -90,20 +90,20 @@ function show_country_details(country)
 
     modal_img.src = country.flags.svg;
 
-// extract all JSON keys from under country.currencies
-currencies = Object.keys(country.currencies);
-//console.log("currencies: " + currencies);
+    // extract all JSON keys from under country.currencies
+    currencies = Object.keys(country.currencies);
+    //console.log("currencies: " + currencies);
 
-var currencies_list = '';
+    var currencies_list = '';
 
-currencies.forEach(key => {
-  //console.log("key: " + key); // e.g.: AFN.
-  // country -> currencies -> AFN -> name (which has the value of "Afagan afghani")
-  console.log("name: " + country.currencies[key].name);
-  currencies_list = currencies_list + country.currencies[key].name + ' ';
-});
+    currencies.forEach(key => {
+    //console.log("key: " + key); // e.g.: AFN.
+    // country -> currencies -> AFN -> name (which has the value of "Afagan afghani")
+    console.log("name: " + country.currencies[key].name);
+    currencies_list = currencies_list + country.currencies[key].name + ' ';
+    });
 
-console.log("currencies_list: " + currencies_list);
+    console.log("currencies_list: " + currencies_list);
 
 
     modal_body.innerHTML = `
@@ -146,14 +146,15 @@ console.log("currencies_list: " + currencies_list);
     `;
 }
 
+// enable dark mode by default.
 document.body.classList.toggle('dark');
 
-// when clicked, toggle the dark class.
+// toggle the dark class.
 darkmode_btn.addEventListener('click', () => {
     document.body.classList.toggle('dark');
 });
 
-// when clicked, toggle the filter class.
+// toggle the filter class.
 filter_btn.addEventListener('click', () => {
     filter_btn.classList.toggle('open');
 });
@@ -163,7 +164,7 @@ close_btn.addEventListener('click', () => {
     modal.style.display = 'none';
 });
 
-// search by country name, code or capital.
+// search by country name.
 // apply a style based on the search value from the search input.
 search_el.addEventListener('input', (e) => {
     const search_term = e.target.value;
