@@ -90,6 +90,22 @@ function show_country_details(country)
 
     modal_img.src = country.flags.svg;
 
+// extract all JSON keys from under country.currencies
+currencies = Object.keys(country.currencies);
+//console.log("currencies: " + currencies);
+
+var currencies_list = '';
+
+currencies.forEach(key => {
+  //console.log("key: " + key); // e.g.: AFN.
+  // country -> currencies -> AFN -> name (which has the value of "Afagan afghani")
+  console.log("name: " + country.currencies[key].name);
+  currencies_list = currencies_list + country.currencies[key].name + ' ';
+});
+
+console.log("currencies_list: " + currencies_list);
+
+
     modal_body.innerHTML = `
         <h2 class=country-name">${country.name.common}</h2>
         <p>
@@ -129,6 +145,8 @@ function show_country_details(country)
         </p>
     `;
 }
+
+document.body.classList.toggle('dark');
 
 // when clicked, toggle the dark class.
 darkmode_btn.addEventListener('click', () => {
