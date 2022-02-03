@@ -115,7 +115,7 @@ function show_country_details(country)
 
         languages.forEach(key => {
         //console.log("key: " + key);
-        console.log("name: " + country.languages[key]);
+        //console.log("name: " + country.languages[key]);
         languages_list = languages_list + country.languages[key] + ', ';
         });
         languages_list = languages_list.slice(0, -2); // remove the last comma.
