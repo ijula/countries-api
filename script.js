@@ -100,8 +100,9 @@ function show_country_details(country)
     //console.log("key: " + key); // e.g.: AFN.
     // country -> currencies -> AFN -> name (which has the value of "Afagan afghani")
     console.log("name: " + country.currencies[key].name);
-    currencies_list = currencies_list + country.currencies[key].name + ' ';
+    currencies_list = currencies_list + country.currencies[key].name + ', ';
     });
+    currencies_list = currencies_list.slice(0, -2); // remove the last comma.
 
     console.log("currencies_list: " + currencies_list);
 
