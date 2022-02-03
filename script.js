@@ -129,20 +129,20 @@ function show_country_details(country)
             ${country.latlng}
         </p>
         <p>
-            <strong>Borders:</strong>
-            ${country.borders}
-        </p>
-        <p>
             <strong>Time Zones:</strong>
             ${country.timezones}
         </p>
         <p>
             <strong>Currencies:</strong>
-            ${country.currencies}
+            ${currencies_list}
         </p>
         <p>
             <strong>Languages:</strong>
             ${country.languages}
+        </p>
+        <p>
+            <strong>Borders:</strong>
+            ${country.borders}
         </p>
     `;
 }
