@@ -90,22 +90,37 @@ function show_country_details(country)
 
     modal_img.src = country.flags.svg;
 
-    // extract all JSON keys from under country.currencies
-    currencies = Object.keys(country.currencies);
-    //console.log("currencies: " + currencies);
+    {
+        // extract all JSON keys from under country.currencies
+        currencies = Object.keys(country.currencies);
+        //console.log("currencies: " + currencies);
 
-    var currencies_list = '';
+        var currencies_list = '';
 
-    currencies.forEach(key => {
-    //console.log("key: " + key); // e.g.: AFN.
-    // country -> currencies -> AFN -> name (which has the value of "Afagan afghani")
-    console.log("name: " + country.currencies[key].name);
-    currencies_list = currencies_list + country.currencies[key].name + ', ';
-    });
-    currencies_list = currencies_list.slice(0, -2); // remove the last comma.
+        currencies.forEach(key => {
+        //console.log("key: " + key); // e.g.: AFN.
+        // country -> currencies -> AFN -> name (which has the value of "Afagan afghani")
+        //console.log("name: " + country.currencies[key].name);
+        currencies_list = currencies_list + country.currencies[key].name + ', ';
+        });
+        currencies_list = currencies_list.slice(0, -2); // remove the last comma.
+        //console.log("currencies_list: " + currencies_list);
+    }
 
-    console.log("currencies_list: " + currencies_list);
+    {
+        languages = Object.keys(country.languages);
+        //console.log("languages: " + languages);
 
+        var languages_list = '';
+
+        languages.forEach(key => {
+        //console.log("key: " + key);
+        console.log("name: " + country.languages[key]);
+        languages_list = languages_list + country.languages[key] + ', ';
+        });
+        languages_list = languages_list.slice(0, -2); // remove the last comma.
+        //console.log("languages_list: " + languages_list);
+    }
 
     modal_body.innerHTML = `
         <h2 class=country-name">${country.name.common}</h2>
@@ -138,7 +153,7 @@ function show_country_details(country)
         </p>
         <p>
             <strong>Languages:</strong>
-            ${country.languages}
+            ${languages_list}
         </p>
         <p>
             <strong>Borders:</strong>
