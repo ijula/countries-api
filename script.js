@@ -1,8 +1,4 @@
-// TODO:
-// Search.
-// Filter.
-// Modal.
-
+// Countries API.
 
 const countries_el = document.getElementById('countries');
 const darkmode_btn = document.getElementById('dark-mode');
