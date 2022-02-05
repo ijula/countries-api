@@ -185,6 +185,8 @@ search_el.addEventListener('input', (e) => {
     // the search applies to multiple classes.
     const query_list = document.querySelectorAll('.country-name');
 
+    var results_count = 0;
+
     // use the HTML that we already have in the DOM.
     // and only apply a style on it, hiding or showing it.
     query_list.forEach((i) => {
@@ -192,11 +194,17 @@ search_el.addEventListener('input', (e) => {
         if (i.innerText.toLowerCase().includes(search_term.toLowerCase())) {
             // .card -> .card-body -> .country-name.
             i.parentElement.parentElement.style.display = 'block';
+            results_count++;
         } else {
             // do not show it.
             i.parentElement.parentElement.style.display = 'none';
         }
     });
+
+    if (results_count == 0) {
+        console.log("No results!");
+        //alert("No results!");
+    }
 });
 
 // add a filter on the li inside the .dropdown.
