@@ -62,7 +62,7 @@ function display_countries(countries)
                     <strong>Region: </strong>${country.region}
                 </p>
                 <p class="country-population">
-                    <strong>Population: </strong>${country.population}
+                    <strong>Population: </strong>${country.population.toLocaleString()}
                 </p>
             </div>
         `;
@@ -134,6 +134,10 @@ function show_country_details(country)
         <p>
             <strong>Capital:</strong>
             ${country.capital}
+        </p>
+        <p>
+            <strong>Population:</strong>
+            ${country.population.toLocaleString()}
         </p>
         <p>
             <strong>latlng:</strong>
